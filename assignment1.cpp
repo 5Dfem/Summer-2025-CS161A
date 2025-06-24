@@ -1,8 +1,8 @@
 // ------------- FILE HEADER -------------
-// Author: 
-// Assignment:
-// Date:
-// Description:
+// Author: Henry Schaerer
+// Assignment: 1
+// Date: June 24th, 2025
+// Description: Payroll
 // Sources: 
 
 
