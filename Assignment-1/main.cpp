@@ -9,9 +9,9 @@
 // ------------- ZYBOOKS SCORES -------------
 // https://learn.zybooks.com/zybook/PCCCS161ASummer25
 // Chapter: 1
-// Participation: 
-// Challenge:
-// Labs:
+// Participation: 92%
+// Challenge: 100%
+// Labs: 0%
 
 
 // ------------- DISCORD POSTS -------------
