@@ -9,8 +9,8 @@
 // ------------- ZYBOOKS SCORES -------------
 // https://learn.zybooks.com/zybook/PCCCS161ASummer25
 // Chapter: 2
-// Participation: 
-// Challenge:
+// Participation: 8%
+// Challenge: 6%
 // Labs: 100%
 
 
@@ -48,21 +48,28 @@ int main() {
 
 // ------------- DESIGN -------------
 /* 
-Program Name:
+Program Name: Oreo Calculator
 
-Program Description:
+Program Description: calculates amount of servings and calories for a given number of oreos
 
 Design:
 A. INPUT
 Define the input variables including name data type. 
+int COOKIES_PER_SERVING = 5;
+int CALORIES_PER_SERVING = 260;
+int cookiesEaten;
 
 B. OUTPUT
 Define the output variables including data types. 
+double servingsEaten;
+double caloriesConsumed;
 
 C. CALCULATIONS
 Describe calculations used by algorithms in step D.  
 List all formulas. 
 If there are no calculations needed, state there are no calculations.
+servingsEaten =  cookiesEaten / COOKIES_PER_SERVING
+caloriesConsumed = servingsEaten * CALORIES_PER_SERVING
 
 D. LOGIC and ALGORITHMS
 Design the logic of your program using pseudocode or flowcharts. 
@@ -70,6 +77,19 @@ Use conditionals, loops, functions or array constructs.
 List the steps in transforming inputs into outputs. 
 https://github.com/Glen-Sasek-PCC-Instructor/2025-06-22/blob/main/Pseudocode-Reference.txt
 
+Declare input variables;
+declare output variables;
+
+MESSAGE "Welcome to the Oreo Calculator!" << endl << endl;
+MESSAGE "Enter the number of Oreos eaten: ";
+INPUT cookiesEaten;
+
+Run calculations;
+
+SET_DISPLAY_FORMAT double 1 decimal point;
+MESSAGE endl << cookiesEaten << " Oresos equals " << servingsEaten << " servings!"  << endl;
+MESSAGE "You consumed " << caloriesConsumed << "calories." << endl;
+MESSAGE endl << "Keep eating Oreos!" << endl;
 
 SAMPLE RUNS
 Copied from assignment document.
