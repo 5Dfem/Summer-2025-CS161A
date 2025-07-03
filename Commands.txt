@@ -1,2 +1,5 @@
 Compile and run command:
     g++ main.cpp && ./a.out && rm ./a.out
+    
+Compile and run with test file:
+    g++ [function name] && ./a.out < [test file name] %% rm ./a.out
