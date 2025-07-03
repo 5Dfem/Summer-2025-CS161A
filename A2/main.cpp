@@ -36,10 +36,30 @@
 // ------------- CODE -------------
 #include <iostream>
 
+#include <iomanip>
+//used for setprecision(1)
+
 using namespace std;
 
 int main() {
-  cout << "Hello, World!" << endl;
+  int COOKIES_PER_SERVING = 5;
+  int CALORIES_PER_SERVING = 160;
+  int cookiesEaten;
+  double servingsEaten;
+  double caloriesConsumed;
+
+  cout << "Welcome to the Oreo Calculator!" << endl;
+  cout << endl << "Enter the number of Oreos eaten: ";
+  cin >> cookiesEaten;
+
+  servingsEaten =  static_cast<double>(cookiesEaten) / COOKIES_PER_SERVING;
+  caloriesConsumed = servingsEaten * CALORIES_PER_SERVING;
+
+
+  cout << fixed << showpoint << setprecision(1);
+  cout << endl << cookiesEaten << " Oresos equals " << servingsEaten << " servings!"  << endl;
+  cout << "You consumed " << caloriesConsumed << " calories." << endl;
+  cout << endl << "Keep eating Oreos!" << endl;
   return 0;
 }
 
@@ -94,6 +114,7 @@ MESSAGE endl << "Keep eating Oreos!" << endl;
 SAMPLE RUNS
 Copied from assignment document.
 
+
 Welcome to the Oreo Calculator!
 
 Enter the number of Oreos eaten: 12
@@ -102,7 +123,6 @@ Enter the number of Oreos eaten: 12
 You consumed 384.0 calories.
 
 Keep eating Oreos!
-
 
 
 Welcome to the Oreo Calculator!
