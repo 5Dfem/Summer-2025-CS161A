@@ -57,7 +57,7 @@ int main() {
 
 
   cout << fixed << showpoint << setprecision(1);
-  cout << endl << cookiesEaten << " Oresos equals " << servingsEaten << " servings!"  << endl;
+  cout << endl << cookiesEaten << " Oreos equals " << servingsEaten << " servings!"  << endl;
   cout << "You consumed " << caloriesConsumed << " calories." << endl;
   cout << endl << "Keep eating Oreos!" << endl;
   return 0;
@@ -107,7 +107,7 @@ INPUT cookiesEaten;
 Run calculations;
 
 SET_DISPLAY_FORMAT double 1 decimal point;
-MESSAGE endl << cookiesEaten << " Oresos equals " << servingsEaten << " servings!"  << endl;
+MESSAGE endl << cookiesEaten << " Oreos equals " << servingsEaten << " servings!"  << endl;
 MESSAGE "You consumed " << caloriesConsumed << "calories." << endl;
 MESSAGE endl << "Keep eating Oreos!" << endl;
 
