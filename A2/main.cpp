@@ -16,20 +16,20 @@
 
 // ------------- DISCORD POSTS -------------
 // https://discord.com/invite/URYKKf8YHm
-// Count:
-// Links (Optional): 
+// Count: 1
+// Links (Optional): https://www.youtube.com/watch?v=dQhj5RGtag0
 
 
 // ------------- DESIGN DOCUMENT -------------
-// A. INPUT [yes/no]: 
-// B. OUTPUT [yes/no]:
-// C. CALCULATIONS [yes/no]:
-// D. LOGIC and ALGORITHMS [yes/no]:
+// A. INPUT [yes/no]: yes
+// B. OUTPUT [yes/no]: yes
+// C. CALCULATIONS [yes/no]: yes
+// D. LOGIC and ALGORITHMS [yes/no]: yes
 //    (Optional) flow chart link or file name: 
 
 
 // ------------- TESTING -------------
-// PASS ALL GIVEN SAMPLE RUN TESTS [yes/no]: 
+// PASS ALL GIVEN SAMPLE RUN TESTS [yes/no]: yes
 // (Optional) Additional tests count:   
 
 
