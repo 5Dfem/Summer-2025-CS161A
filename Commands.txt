@@ -1,5 +1,8 @@
-Compile and run command:
+Compile and run:
     g++ [code file name] && ./a.out && rm ./a.out
+
+Compile and run with showing all errors:
+    g++ -Wall [code file name] && ./a.out && rm ./a.out
 
 Compile and run with test file:
     g++ [code file name] && ./a.out < [test file name] && rm ./a.out
