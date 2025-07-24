@@ -1,30 +1,16 @@
 // ------------- FILE HEADER -------------
-// Author: 
-// Assignment:
-// Date:
-// Description:
+// Author: Henry Schaerer
+// Assignment: midterm
+// Date: July 24th, 2025
+// Description: 
 // Sources: 
 
 
-// ------------- ZYBOOKS SCORES -------------
-// https://learn.zybooks.com/zybook/PCCCS161ASummer25
-// Chapter: 
-// Participation: 
-// Challenge:
-// Labs:
-
-
-// ------------- DISCORD POSTS -------------
-// https://discord.com/invite/URYKKf8YHm
-// Count:
-// Links (Optional): 
-
-
 // ------------- DESIGN DOCUMENT -------------
-// A. INPUT [yes/no]: 
-// B. OUTPUT [yes/no]:
-// C. CALCULATIONS [yes/no]:
-// D. LOGIC and ALGORITHMS [yes/no]:
+// A. INPUT [yes/no]: yes
+// B. OUTPUT [yes/no]: yes
+// C. CALCULATIONS [yes/no]: yes
+// D. LOGIC and ALGORITHMS [yes/no]: yes
 //    (Optional) flow chart link or file name: 
 
 
@@ -39,7 +25,27 @@
 using namespace std;
 
 int main() {
-  cout << "Hello, World!" << endl;
+  string player_1_name;
+  string player_2_name;
+  string player_3_name;
+
+  int player_1_score;
+  int player_2_score;
+  int player_3_score;
+
+  double average_score;
+
+  string rank_1_name;
+  string rank_2_name;
+  string rank_3_name;
+
+  int rank_1_score;
+  int rank_2_score;
+  int rank_3_score;
+
+  bool is_3_way_tie;
+  bool is_2_way_tie_for_first;
+  bool is_2_way_tie_for_second;
   return 0;
 }
 
@@ -54,20 +60,94 @@ Program Description:
 
 Design:
 A. INPUT
-Define the input variables including name data type. 
+
+string player_1_name;
+string player_2_name;
+string player_3_name;
+
+int player_1_score;
+int player_2_score;
+int player_3_score;
 
 B. OUTPUT
 Define the output variables including data types. 
 
+double average_score;
+
+string rank_1_name;
+string rank_2_name;
+string rank_3_name;
+
+int rank_1_score;
+int rank_2_score;
+int rank_3_score;
+
+bool is_3_way_tie;
+bool is_2_way_tie_for_first;
+bool is_2_way_tie_for_second;
+
+
+
 C. CALCULATIONS
-Describe calculations used by algorithms in step D.  
-List all formulas. 
-If there are no calculations needed, state there are no calculations.
+
+average_score = (player_1_score + player_1_score + player_1_score) / 3.0;
 
 D. LOGIC and ALGORITHMS
 
+//display welcome message
 
+//get user input
 
+if (player_1_score == player_2_score && player_2_score == player_3_score) {
+  // 3 way tie
+  rank_1_score = player_1_score;
+  is_3_way_tie = true;
+  rank_1_name = format(player_1_name, player_2_name, player_3_name);
+}
+else if (player_1_score == player_2_score || player_1_score == player_3_score || player_2_score == player_3_score) {
+  // 2 way tie
+  rank_1_score = max(player_1_score, player_2_score, player_3_score);
+  rank_2_score = min(player_1_score, player_2_score, player_3_score);
+  rank_1_name = [every player with rank_1_score]; // if multiple set is_2_way_tie_for_first = true;
+  rank_2_name = [every player with rank_2_score]; // if multiple set is_2_way_tie_for_second = true;
+}
+else {
+  rank_1_score = max(player_1_score, player_2_score, player_3_score); 
+  rank_1_name = [player with rank_1_score];
+  rank_3_score = min(player_1_score, player_2_score, player_3_score);
+  rank_3_name = [player with rank_3_score];
+  rank_2_score = [player that has score not equal to rank_1_score or rank_3_score];
+  rank_2_name = [player with rank_2_score];
+}
+
+// calculate average score
+
+if (is_3_way_tie) {
+  display(rank_1_name);
+  display(rank_1_score);
+}
+else if (is_2_way_tie_for_first) {
+  display(rank_1_name);
+  display(rank_1_score);
+  display(rank_2_name);
+  display(rank_2_score);
+}
+else if (is_2_way_tie_for_second) {
+  display(rank_1_name);
+  display(rank_1_score);
+  display(rank_2_name);
+  display(rank_2_score);
+}
+else {
+  display(rank_1_name);
+  display(rank_1_score);
+  display(rank_2_name);
+  display(rank_2_score);
+  display(rank_3_name);
+  display(rank_3_score);
+}
+
+diplay(average_score);
 
 
 SAMPLE RUNS
