@@ -21,31 +21,208 @@
 
 // ------------- CODE -------------
 #include <iostream>
+#include <iomanip> //used for setprecision()
+#include <limits> // NOT <climits> for cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 using namespace std;
 
 int main() {
-  string player_1_name;
-  string player_2_name;
-  string player_3_name;
+  string player_1_name = "";
+  string player_2_name = "";
+  string player_3_name = "";
 
-  int player_1_score;
-  int player_2_score;
-  int player_3_score;
+  int player_1_score = 0;
+  int player_2_score = 0;
+  int player_3_score = 0;
 
-  double average_score;
+  bool is_rank_1_name_used = false;
+  bool is_rank_2_name_used = false;
 
-  string rank_1_name;
-  string rank_2_name;
-  string rank_3_name;
+  double average_score = 0.0;
 
-  int rank_1_score;
-  int rank_2_score;
-  int rank_3_score;
+  string rank_1_name = "";
+  string rank_2_name = "";
+  string rank_3_name = "";
 
-  bool is_3_way_tie;
-  bool is_2_way_tie_for_first;
-  bool is_2_way_tie_for_second;
+  int rank_1_score = 0;
+  int rank_2_score = 0;
+  int rank_3_score = 0;
+
+  bool is_3_way_tie = false;
+  bool is_2_way_tie_for_first = false;
+  bool is_2_way_tie_for_second = false;
+
+  cout << "Welcome to the Rock Collector Championships!" << endl;
+
+  cout << endl << "Enter player 1 name: ";
+  getline(cin, player_1_name);
+  cout << "How many rocks did " << player_1_name << " collect? ";
+  cin >> player_1_score;
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+  if (player_1_score < 0) {
+    player_1_score = 0;
+    cout << "Invalid amount. 0 will be entered." << endl;
+  }
+
+  cout << endl << "Enter player 2 name: ";
+  getline(cin, player_2_name);
+  cout << "How many rocks did " << player_2_name << " collect? ";
+  cin >> player_2_score;
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+  if (player_2_score < 0) {
+    player_2_score = 0;
+    cout << "Invalid amount. 0 will be entered." << endl;
+  }
+  cout << endl << "Enter player 3 name: ";
+  getline(cin, player_3_name);
+  cout << "How many rocks did " << player_3_name << " collect? ";
+  cin >> player_3_score;
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+  if (player_3_score < 0) {
+    player_3_score = 0;
+    cout << "Invalid amount. 0 will be entered." << endl;
+  }
+
+  if (player_1_score == player_2_score && player_2_score == player_3_score) {
+    // 3 way tie
+    is_3_way_tie = true;
+  }
+  else if (player_1_score == player_2_score || player_1_score == player_3_score || player_2_score == player_3_score) {
+    // 2 way tie
+    rank_1_score = player_1_score;
+    if (player_2_score > rank_1_score){
+      rank_1_score = player_2_score;
+    }
+    if (player_3_score > rank_1_score){
+      rank_1_score = player_3_score;
+    }
+    
+    rank_2_score = player_1_score;
+    if (player_2_score < rank_2_score){
+      rank_2_score = player_2_score;
+    }
+    if (player_3_score < rank_2_score){
+      rank_2_score = player_3_score;
+    }
+
+    if (player_1_score == rank_1_score) {
+      rank_1_name = player_1_score;
+    }
+    if (player_1_score == rank_1_score) {
+      rank_1_name = player_1_score;
+    }
+
+    if (rank_1_score == player_1_score) {
+      rank_1_name = player_1_name;
+      is_rank_1_name_used = true;
+    }
+    if (rank_1_score == player_2_score) {
+      if (is_rank_1_name_used) {
+        is_2_way_tie_for_first = true;
+        rank_1_name = rank_1_name + " and " + player_2_name;
+      }
+      else {
+        rank_1_name = player_2_name;
+        is_rank_1_name_used = true;
+      }
+    }
+    if (rank_1_score == player_3_score) {
+      if (is_rank_1_name_used) {
+        is_2_way_tie_for_first = true;
+        rank_1_name = rank_1_name + " and " + player_3_name;
+      }
+      else {
+        rank_1_name = player_3_name;
+        is_rank_1_name_used = true;
+      }
+    }
+
+    if (rank_2_score == player_1_score) {
+      rank_2_name = player_1_name;
+      is_rank_2_name_used = true;
+    }
+    if (rank_2_score == player_2_score) {
+      if (is_rank_2_name_used) {
+        rank_2_name = rank_2_name + " and " + player_2_name;
+      }
+      else {
+        rank_2_name = player_2_name;
+        is_rank_2_name_used = true;
+      }
+    }
+    if (rank_2_score == player_3_score) {
+      if (is_rank_2_name_used) {
+        rank_2_name = rank_2_name + " and " + player_3_name;
+      }
+      else {
+        rank_2_name = player_3_name;
+        is_rank_2_name_used = true;
+      }
+    }
+  }
+  else {
+    rank_1_score = player_1_score;
+    rank_1_name = player_1_name;
+    if (player_2_score > rank_1_score) {
+      rank_1_score = player_2_score;
+      rank_1_name = player_2_name;
+    }
+    if (player_3_score > rank_1_score) {
+      rank_1_score = player_3_score;
+      rank_1_name = player_3_name;
+    }
+
+    rank_3_score = player_1_score;
+    rank_3_name = player_1_name;
+    if (player_2_score < rank_3_score) {
+      rank_3_score = player_2_score;
+      rank_3_name = player_2_name;
+    }
+    if (player_3_score > rank_3_score) {
+      rank_3_score = player_3_score;
+      rank_3_name = player_3_name;
+    }
+
+    if (player_1_score != rank_1_score && player_1_score != rank_2_score){
+      rank_2_score = player_1_score;
+      rank_2_name = player_1_name;
+    }
+    if (player_2_score != rank_1_score && player_1_score != rank_2_score){
+      rank_2_score = player_2_score;
+      rank_2_name = player_2_name;
+    }
+    if (player_3_score != rank_1_score && player_1_score != rank_2_score){
+      rank_2_score = player_3_score;
+      rank_2_name = player_3_name;
+    }
+  }
+  average_score = (player_1_score + player_2_score + player_3_score) / 3.0;
+
+  if (is_3_way_tie) {
+    cout << endl << "It is a three way tie!" << endl;
+  }
+  else if (is_2_way_tie_for_first) {
+    cout << endl << rank_1_name <<  " are tied for first place." << endl;
+    cout << rank_2_name << " is in second place!" << endl;
+  }
+  else if (is_2_way_tie_for_second) {
+    cout << endl << rank_1_name <<  " is in first place!" << endl;
+    cout << rank_2_name << " are tied for second place." << endl;
+  }
+  else {
+    cout << endl << rank_1_name<< " is in first place!" << endl;
+    cout << rank_2_name << " is in second place." << endl;
+    cout << rank_3_name << " is in third place." << endl;
+  }
+
+  cout << fixed << showpoint << setprecision(2);
+  cout << endl << "The average number of rocks collected by the top three players is " << average_score << " rocks!" << endl;
+
+  cout << endl << "Congratulations Rock Collectors!" << endl;
+
   return 0;
 }
 
@@ -90,7 +267,7 @@ bool is_2_way_tie_for_second;
 
 C. CALCULATIONS
 
-average_score = (player_1_score + player_1_score + player_1_score) / 3.0;
+average_score = (player_1_score + player_2_score + player_3_score) / 3.0;
 
 D. LOGIC and ALGORITHMS
 
@@ -100,9 +277,7 @@ D. LOGIC and ALGORITHMS
 
 if (player_1_score == player_2_score && player_2_score == player_3_score) {
   // 3 way tie
-  rank_1_score = player_1_score;
   is_3_way_tie = true;
-  rank_1_name = format(player_1_name, player_2_name, player_3_name);
 }
 else if (player_1_score == player_2_score || player_1_score == player_3_score || player_2_score == player_3_score) {
   // 2 way tie
